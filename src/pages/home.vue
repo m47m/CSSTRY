@@ -1,110 +1,42 @@
 <script setup>
 import { useRouter } from "vue-router";
+import { getListAPI } from "../api/test";
 import { onBeforeMount, onBeforeUnmount, onMounted, ref, useAttrs } from "vue";
+
+const router = useRouter();
+
+const arr = ref([[]]);
+//渲染页面body的背景色
 onBeforeMount(() => {
   document.body.setAttribute("style", "background: rgb(243, 230, 241)");
 });
 onBeforeUnmount(() => {
   document.body.removeAttribute("style");
 });
-const router = useRouter();
 
-const arr = ref([[]]);
+//根据相对路径获取图片
+function getImage(src) {
+  return new URL(src, import.meta.url).href;
+}
 
 onMounted(() => {
-  var n = 5
-  var len = msg.length
-  var lineNum = len % n === 0 ? len / 4 : Math.floor(len / 4 + 1)
-  for (var i = 0; i <lineNum; i++) {
-    arr.value[i] = ref([])
-    arr.value[i] = msg.slice(i * n, i * n + n)
-  }
-
-  console.log(arr.value[0])
+  //获得所有页面列表
+  getListAPI().then((res) => {
+    console.log(res.msg);
+    let msg = res.msg;
+    var n = 5;
+    var len = msg.length;
+    var lineNum = len % n === 0 ? len / 4 : Math.floor(len / 4 + 1);
+    for (var i = 0; i < lineNum; i++) {
+      arr.value[i] = ref([]);
+      arr.value[i] = msg.slice(i * n, i * n + n);
+    }
+  });
+  console.log(arr.value[0]);
 });
 
-const msg = [
-  {
-    id: 1,
-    img: new URL("../assets/login1.jpg", import.meta.url).href,
-    name: "翻转卡片Login",
-    path: "/login1",
-  },
-  {
-    id: 2,
-    img: new URL("../assets/frostedglass1.jpg", import.meta.url).href,
-    name: "毛玻璃",
-    path: "/frostedglass1",
-  },
-  {
-    id: 3,
-    img: new URL("../assets/img (3).jpg", import.meta.url).href,
-    name: "File",
-    path: "/login1",
-  },
-  {
-    id: 4,
-    img: new URL("../assets/img (4).jpg", import.meta.url).href,
-    name: "Music",
-    path: "/login1",
-  },
-  {
-    id: 5,
-    img: new URL("../assets/img (5).jpg", import.meta.url).href,
-    name: "Lyric",
-    path: "/login1",
-  },
-  {
-    id: 6,
-    img: new URL("../assets/img (5).jpg", import.meta.url).href,
-    name: "Lyric",
-    path: "/login1",
-  },
-   {
-    id: 6,
-    img: new URL("../assets/img (5).jpg", import.meta.url).href,
-    name: "Lyric",
-    path: "/login1",
-  },
-   {
-    id: 6,
-    img: new URL("../assets/img (5).jpg", import.meta.url).href,
-    name: "Lyric",
-    path: "/login1",
-  },
-   {
-    id: 6,
-    img: new URL("../assets/img (5).jpg", import.meta.url).href,
-    name: "Lyric",
-    path: "/login1",
-  },
-   {
-    id: 6,
-    img: new URL("../assets/img (5).jpg", import.meta.url).href,
-    name: "Lyric",
-    path: "/login1",
-  },
-   {
-    id: 6,
-    img: new URL("../assets/img (5).jpg", import.meta.url).href,
-    name: "Lyric",
-    path: "/login1",
-  },
-   {
-    id: 6,
-    img: new URL("../assets/img (5).jpg", import.meta.url).href,
-    name: "Lyric",
-    path: "/login1",
-  },
-   {
-    id: 6,
-    img: new URL("../assets/img (5).jpg", import.meta.url).href,
-    name: "Lyric",
-    path: "/login1",
-  },
-];
+//跳转到响应页面
 const say = (path) => {
-  
   router.push({
     path: path,
   });
@@ -113,14 +45,14 @@ const say = (path) => {
 
 <template >
   <div class="body">
-    <div class="shell" v-for="(usrArr,i) in arr" :key="i">
+    <div class="shell" v-for="(usrArr, i) in arr" :key="i">
       <div
         class="box"
         v-for="(user, i) in usrArr"
         :key="i"
         @click="say(user.path)"
       >
-        <img :src="user.img" />
+        <img :src="getImage(user.img)" />
         <span>{{ user.name }}</span>
       </div>
     </div>

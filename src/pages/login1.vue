@@ -121,9 +121,10 @@ const gohome = ()=>{
 }
 
 .bottom {
-  width: 300px;
-  height: 250px;
-  background-image: url(../assets/login1_background.png);
+  width: 350px;
+  height: 300px;
+  background-image: url(../assets/login1_background.png) ;
+  background-size: 100% 100%;
   transform-style: preserve-3d;
   /* 使元素呈现出3D效果 */
   position: relative;
@@ -133,7 +134,7 @@ const gohome = ()=>{
 
 .bottom > div {
   width: 100%;
-  height: 100%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -144,9 +145,10 @@ const gohome = ()=>{
   color: white;
 }
 .bottom > div input {
-  width: 200px;
-  height: 25px;
+  width: 220px;
+  height: 35px;
   padding: 0 10px;
+  margin-bottom: 20px;
   background-color: rgb(31, 32, 41);
   color: #fff;
 }
@@ -159,7 +161,7 @@ const gohome = ()=>{
   background-color: rgb(255, 235, 167);
   border-radius: 4px;
   transition: 0.3s;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   cursor: pointer;
   box-shadow: 0 0 10px rgb(212, 193, 128);
 }
