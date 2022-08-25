@@ -31,7 +31,9 @@
 import { useRouter } from "vue-router";
 import { onBeforeMount, onBeforeUnmount, ref } from "vue";
 onBeforeMount(() => {
-  document.body.setAttribute("style", "background: #000000");
+   document.body.setAttribute("style", "background: #000000");
+  //document.body.setAttribute("style", "background: linear-gradient(to left,rgb(228, 148, 148),rgb(154, 127, 250))");
+  
 });
 onBeforeUnmount(() => {
   document.body.removeAttribute("style");
@@ -85,7 +87,7 @@ const gohome = ()=>{
   padding-bottom: 5px;
   margin-bottom: 20px;
   border-radius: 8px;
-  background-color: #000;
+  /* background-color: rgb(42, 43, 57); */
   display: flex;
   cursor: pointer;
   justify-content: space-evenly;
@@ -111,17 +113,17 @@ const gohome = ()=>{
   position: absolute;
   width: 25px;
   height: 25px;
-  background-color: rgb(46, 45, 56);
+  background-color: rgb(42, 43, 57);
   border-radius: 50%;
   transition: 0.5s;
-  box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px rgb(25, 25, 31);
   transform: translate(-1px);
 }
 
 .bottom {
   width: 300px;
   height: 250px;
-  background-image: url(../assets/background.png);
+  background-image: url(../assets/login1_background.png);
   transform-style: preserve-3d;
   /* 使元素呈现出3D效果 */
   position: relative;

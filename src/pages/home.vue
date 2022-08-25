@@ -1,6 +1,6 @@
 <script setup>
 import { useRouter } from "vue-router";
-import { onBeforeMount, onBeforeUnmount, ref } from "vue";
+import { onBeforeMount, onBeforeUnmount, onMounted, ref, useAttrs } from "vue";
 onBeforeMount(() => {
   document.body.setAttribute("style", "background: rgb(243, 230, 241)");
 });
@@ -8,6 +8,20 @@ onBeforeUnmount(() => {
   document.body.removeAttribute("style");
 });
 const router = useRouter();
+
+const arr = ref([[]]);
+
+onMounted(() => {
+  var n = 5
+  var len = msg.length
+  var lineNum = len % n === 0 ? len / 4 : Math.floor(len / 4 + 1)
+  for (var i = 0; i <lineNum; i++) {
+    arr.value[i] = ref([])
+    arr.value[i] = msg.slice(i * n, i * n + n)
+  }
+
+  console.log(arr.value[0])
+});
 
 const msg = [
   {
@@ -18,9 +32,9 @@ const msg = [
   },
   {
     id: 2,
-    img: new URL("../assets/img (2).jpg", import.meta.url).href,
-    name: "Video",
-    path: "/login1",
+    img: new URL("../assets/frostedglass1.jpg", import.meta.url).href,
+    name: "毛玻璃",
+    path: "/frostedglass1",
   },
   {
     id: 3,
@@ -41,27 +55,68 @@ const msg = [
     path: "/login1",
   },
   {
-    id: 5,
+    id: 6,
+    img: new URL("../assets/img (5).jpg", import.meta.url).href,
+    name: "Lyric",
+    path: "/login1",
+  },
+   {
+    id: 6,
+    img: new URL("../assets/img (5).jpg", import.meta.url).href,
+    name: "Lyric",
+    path: "/login1",
+  },
+   {
+    id: 6,
+    img: new URL("../assets/img (5).jpg", import.meta.url).href,
+    name: "Lyric",
+    path: "/login1",
+  },
+   {
+    id: 6,
+    img: new URL("../assets/img (5).jpg", import.meta.url).href,
+    name: "Lyric",
+    path: "/login1",
+  },
+   {
+    id: 6,
+    img: new URL("../assets/img (5).jpg", import.meta.url).href,
+    name: "Lyric",
+    path: "/login1",
+  },
+   {
+    id: 6,
+    img: new URL("../assets/img (5).jpg", import.meta.url).href,
+    name: "Lyric",
+    path: "/login1",
+  },
+   {
+    id: 6,
+    img: new URL("../assets/img (5).jpg", import.meta.url).href,
+    name: "Lyric",
+    path: "/login1",
+  },
+   {
+    id: 6,
     img: new URL("../assets/img (5).jpg", import.meta.url).href,
     name: "Lyric",
     path: "/login1",
   },
 ];
 const say = (path) => {
-  //函数也可以直接引用,而不用返回
+  
   router.push({
     path: path,
   });
-  console.log(data);
 };
 </script>
 
 <template >
   <div class="body">
-    <div class="shell">
+    <div class="shell" v-for="(usrArr,i) in arr" :key="i">
       <div
         class="box"
-        v-for="(user, i) in msg"
+        v-for="(user, i) in usrArr"
         :key="i"
         @click="say(user.path)"
       >
@@ -82,6 +137,7 @@ const say = (path) => {
   margin: 0 auto;
   width: 70%;
   height: 300px;
+  margin-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -93,21 +149,21 @@ const say = (path) => {
   overflow: hidden;
   transition: 0.5s;
   margin: 0 15px;
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 10px 10px 15px rgba(138, 136, 136, 0.5);
   border-radius: 20px;
-  border: 10px solid #fff;
+  border: 8px solid #fff;
   background-color: #fff;
 }
 .box > img {
   width: 100%;
-  height: 85%;
+  height: 90%;
   object-fit: cover;
   transition: 0.5s;
 }
 .box > span {
-  font: 200 15px "优设标题黑";
+  font: 200 14px "宋体";
   text-align: center;
-  height: 15%;
+  height: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
