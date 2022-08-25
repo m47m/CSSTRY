@@ -1,6 +1,6 @@
 module.exports = {
-	publicPath: "./",
-	outputDir: "dist",
-	assetsDir: "assets",
-	indexPath: "index.html"
-    }
+	baseUrl: process.env.NODE_ENV === 'production'
+	  ? '/CSSTRY/'
+	  : '/'
+      }
+      
