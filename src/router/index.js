@@ -1,11 +1,23 @@
-import { createWebHistory, createRouter } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "../pages/home.vue";
 import About from "../pages/about.vue";
 import Login1 from "../pages/login1.vue"
 import FrostedGlass1 from "../pages/frostedglass1.vue"
+import Resume from "../pages/resume.vue"
+import CssTry from "../pages/csstry.vue"
 
-const routes = [
+const routes = [ 
   {
+    path: "/resume",
+    name: "Resume",
+    component: Resume,
+  },    
+  {
+    path: "/csstry",
+    name: "CssTry",
+    component: CssTry,
+  },
+  {  
     path: "/",
     name: "Home",
     component: Home,
@@ -24,11 +36,12 @@ const routes = [
     path: "/frostedglass1",
     name: "FrostedGlass1",
     component: FrostedGlass1,
-  }
+  },
+
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
 });
 

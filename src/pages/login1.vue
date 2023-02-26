@@ -123,7 +123,7 @@ const gohome = ()=>{
 .bottom {
   width: 350px;
   height: 300px;
-  background-image: url(../assets/login1_background.png) ;
+  background-image: url(../assets/img/login1_background.png) ;
   background-size: 100% 100%;
   transform-style: preserve-3d;
   /* 使元素呈现出3D效果 */

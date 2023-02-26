@@ -2,43 +2,43 @@
 	"msg": [
 		{
 			"id": 1,
-			"img": "/assets/login1.jpg",
+			"img": "/assets/img/login1.jpg",
 			"name": "翻转卡片Login",
 			"path": "/login1"
 		},
 		{
 			"id": 2,
-			"img": "/assets/frostedglass1.jpg",
+			"img": "/assets/img/frostedglass1.jpg",
 			"name": "毛玻璃",
 			"path": "/frostedglass1"
 		},
 		{
 			"id": 3,
-			"img": "/assets/img (3).jpg",
+			"img": "/assets/img/img (1).jpg",
 			"name": "File",
 			"path": "/login1"
 		},
 		{
 			"id": 4,
-			"img": "/assets/img (3).jpg",
+			"img": "/assets/img/img (2).jpg",
 			"name": "File",
 			"path": "/login1"
 		},
 		{
 			"id": 5,
-			"img": "/assets/img (3).jpg",
+			"img": "/assets/img/img (3).jpg",
 			"name": "File",
 			"path": "/login1"
 		},
 		{
 			"id": 6,
-			"img": "/assets/img (3).jpg",
+			"img": "/assets/img/img (4).jpg",
 			"name": "File",
 			"path": "/login1"
 		},
 		{
 			"id": 7,
-			"img": "/assets/img (3).jpg",
+			"img": "/assets/img/img (5).jpg",
 			"name": "File",
 			"path": "/login1"
 		}
