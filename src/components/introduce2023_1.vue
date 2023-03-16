@@ -16,7 +16,7 @@
 		<p>我的迷思：<a href="https://signal.xm130812.one/" target="_blank" class="link_a" >(～￣(OO)￣)ブ</a>（人的情绪总是无处表达）</p>
 
 		<p>以后可能是我的作品集，但现在只是个练手用的： 
-			<router-link to="/csstry" class="link_a">
+			<router-link to="/csslearn" class="link_a">
 				(#`O′)
 			</router-link>
 		</p>
