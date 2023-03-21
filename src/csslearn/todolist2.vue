@@ -6,7 +6,7 @@
       <TodoAdd :tid="todos.length" @add-todo="addTodo" />
       <TodoFilter :selected="filter" @change-filter="filter = $event" />
       <TodoList :todos="filteredTodos" />
-    </div>
+    </div>                          
   </div>
 </template>
 
@@ -65,7 +65,7 @@ const filteredTodos = computed(() => {
   width: 60%;
   max-width: 400px;
   box-shadow: 0px 0px 24px rgba(26, 25, 25, 0.15);
-  border-radius: 24px;
+  border-radius: 24px;  
   padding: 48px 28px;
   background-color: rgb(229, 230, 235);
 }

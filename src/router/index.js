@@ -6,8 +6,8 @@ import FrostedGlass1 from "../pages/frostedglass1.vue"
 import Resume from "../pages/resume.vue"
 import CssTry from "../pages/csstry.vue"
 import CssLearn from "../pages/csslearn.vue"
-import ToDoList from "../csslearn/todolist1.vue"
 import TodoList2 from "../csslearn/todoList2.vue"
+const TemplateofHtml = ()=>import('../components/TemplateofHtml.vue')
 
 const routes = [ 
   {
@@ -45,11 +45,11 @@ const routes = [
     name: "CssLearn",
     component: CssLearn,
   },
-  // {
-  //   path: "/todolist1",
-  //   name: "TodoList",
-  //   component: ToDoList,
-  // },
+  {
+    path: "/templateofhtml",
+    name: "TemplateofHtml",
+    component: TemplateofHtml,
+  },
   {
     path: "/todolist",
     name: "TodoList2",
